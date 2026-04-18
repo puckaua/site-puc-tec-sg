@@ -91,20 +91,9 @@ header {
     align-items: center;
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    display: flex;
-    flex-direction: column;
-    line-height: 1;
-}
-
-.logo span.sub {
-    font-size: 10px;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-    margin-top: 4px;
+.logo img {
+    height: 70px;
+    width: auto;
 }
 
 .nav-links {
@@ -435,14 +424,15 @@ header {
     position: relative;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
+    padding: 20px 40px;
+    box-sizing: border-box;
 }
 
 .logos-track {
     display: flex;
     align-items: center;
-    gap: 60px;
-    animation: scroll-carousel 20s linear infinite;
-    padding: 20px 40px;
+    /* Aumentar a duração torna a animação mais suave e o loop imperceptível */
+    animation: scroll-carousel 60s linear infinite;
 }
 
 @keyframes scroll-carousel {
@@ -450,22 +440,24 @@ header {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-20%);
     }
 }
 
 
 
 .logos-track img {
-    max-height: 80px;
+    height: 60px; /* Define uma altura fixa para normalizar o tamanho */
+    width: auto;  /* Garante que a largura se ajuste para manter a proporção */
     opacity: 0.8;
     transition: var(--transition);
     flex-shrink: 0;
+    margin-right: 60px; /* Usar margem em vez de gap para um loop perfeito */
 }
 
 .logos-track img[alt="Logo Azul"] {
-    max-height: 140px;
-    align-self: center;
+    /* Ajuste para compensar o espaço em branco na imagem e alinhar visualmente com os outros */
+    height: 120px;
 }
 
 .logos-track img:hover {
